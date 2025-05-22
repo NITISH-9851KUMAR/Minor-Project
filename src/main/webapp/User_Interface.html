@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="User_Interface.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="Bank_photo">
+        <!--    photo Container-->
+        <img src="Nitiya_Bank_Logo.png" alt="">
+    </div>
+
+    <div class="form-container">
+            <div class="logo">
+                <h2>Nitiya Bank</h2>
+                <p>Login Your Account</p>
+            </div>
+
+            <div class="form-section">
+                <form action="LoginRequestServlets" method="post">
+                    <input type="text" name="accNumber" placeholder="Account Number" class="inp"  required><br>
+                    <input type="password" name="pass" placeholder="Password" class="inp" required><br>
+
+                    <button type="submit" class="sign-btn">Sign in</button>
+                    <a href="forgotPassword.html">Forgot Your Password?</a>
+                </form>
+            </div>
+
+            <div class="new-user">
+                <p>Don't have an account?</p>
+                <a href="openAccount.html">Open new Account </a>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    background-color: #2d2d30;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    width: 40%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 50px auto 0 auto; /* top 50px, auto left & right for centering */
+}
+
+
+.logo h2 {
+    text-align: center;
+    color: #3c3636;
+    margin-bottom: 10px;
+    margin-top: 2px;
+}
+.logo p{
+    text-align: center;
+    color: red;
+}
+
+.form-section {
+    width: 100%;
+}
+
+input {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    justify-content: center;
+}
+.inp{
+    margin-left: 40px;
+}
+
+.sign-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 5px;
+    width: 60%;
+    font-size: 16px;
+    margin-top: 1px;
+    margin-left: 70px;
+}
+
+.sign-btn:hover {
+    background-color: #4e4545;
+}
+
+
+
+/* Responsive design */
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    .sign-btn {
+        font-size: 14px;
+    }
+}
