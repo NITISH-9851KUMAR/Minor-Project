@@ -1,15 +1,18 @@
 package fun;
 
-import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 
 public class DateNow {
 
     public static String dateFun(){
-        LocalDateTime local= LocalDateTime.now();
-        DateTimeFormatter formatter= DateTimeFormatter.ofPattern("dd-MM-yy hh:mm");
-        String val= ""+local.format(formatter);
-        return val;
+
+        ZonedDateTime istTime = ZonedDateTime.now(ZoneId.of("Asia/Kolkata"));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String time = istTime.format(formatter);
+
+        return time;
     }
 }
