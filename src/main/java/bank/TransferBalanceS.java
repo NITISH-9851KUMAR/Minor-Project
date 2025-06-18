@@ -14,9 +14,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@WebServlet("/TransferBalance2Servlets")
+@WebServlet("/transfer-balance-s")
 
-public class TransferBalance2 extends HttpServlet{
+public class TransferBalanceS extends HttpServlet{
     final static String url = "jdbc:mysql://localhost:3306/NitiyaBank";
     final static String userName = "root";
     final static String password = "Nitish@04";
@@ -63,7 +63,7 @@ public class TransferBalance2 extends HttpServlet{
             }else{
                 out.println("<p style='color:red;'>Invalid Receiver Account Details</p>");
                 out.println("<p style='color:black;'>Receiver Account Number: "+receiverAcNumber+"</p>");
-                out.println("<form action='AccountMenu.jsp' method='post'>");
+                out.println("<form action='account-menu.jsp' method='post'>");
                 out.println("<input type='hidden' name='name' value='" + senderName + "'>");
                 out.println("<input type='hidden' name='accNumber' value='" + senderAcNumber + "'>");
                 out.println("<button type='submit' style='padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:25px; margin-top:15px; font-weight:bold;'>Go to Account Menu</button>");
@@ -89,7 +89,7 @@ public class TransferBalance2 extends HttpServlet{
                 out.println("<p style='color:red;'>Invalid Transfer Balance</p>");
                 out.println("<p style='color:black;'>Entered Transfer Balance: "+transferBal+"</p>");
 
-                out.println("<form action='AccountMenu.jsp' method='post'>");
+                out.println("<form action='account-menu.jsp' method='post'>");
                 out.println("<input type='hidden' name='name' value='" + senderName + "'>");
                 out.println("<input type='hidden' name='accNumber' value='" + senderAcNumber + "'>");
                 out.println("<button type='submit' style='padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:25px; margin-top:15px; font-weight:bold;'>Go to Account Menu</button>");
@@ -103,12 +103,12 @@ public class TransferBalance2 extends HttpServlet{
                 out.println("<p style='color:red;'>Insufficient Balance</p>");
                 out.println("<p style='color:black;'>The money in your account is not enough for this payment. Check account balance and try again</p>");
                 // Check Balance
-                out.println("<form action='CheckBalanceServlets' method='post'>");
+                out.println("<form action='check-balance' method='post'>");
                 out.println("<input type='hidden' name='accNumber' value='" + senderAcNumber + "'>");
                 out.println("<button type='submit' style='padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:25px; margin-top:15px; font-weight:bold;'>Check Balance</button>");
                 out.println("</form>");
                 //             Go to Account Menu Button with hidden inputs
-                out.println("<form action='AccountMenu.jsp' method='post'>");
+                out.println("<form action='account-menu.jsp' method='post'>");
                 out.println("<input type='hidden' name='name' value='" + senderName + "'>");
                 out.println("<input type='hidden' name='accNumber' value='" + senderAcNumber + "'>");
                 out.println("<button type='submit' style='padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:25px; margin-top:15px; font-weight:bold;'>Go to Account Menu</button>");
@@ -146,7 +146,7 @@ public class TransferBalance2 extends HttpServlet{
 
 
 //             Go to Account Menu Button with hidden inputs
-            out.println("<form action='AccountMenu.jsp' method='post'>");
+            out.println("<form action='account-menu.jsp' method='post'>");
             out.println("<input type='hidden' name='name' value='" + senderName + "'>");
             out.println("<input type='hidden' name='accNumber' value='" + senderAcNumber + "'>");
             out.println("<button type='submit' style='padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:25px; margin-top:15px; font-weight:bold;'>Go to Account Menu</button>");

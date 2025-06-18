@@ -1,9 +1,9 @@
 package fun;
 
 public class TransactionTableName {
-    public static String  TransactionTableName(String name, String prn){
+    public static String TransactionTableName(String name, String prn) {
 
-        String tranTableName="";
+        String tranTableName = "";
         // Extract first part of name (before space)
         StringBuilder firstName = new StringBuilder();
         for (int i = 0; i < name.length(); i++) {
@@ -23,7 +23,7 @@ public class TransactionTableName {
             }
         }
 
-        tranTableName= (firstName.toString()+lastFiveDigitPrn).trim();
+        tranTableName = (firstName.toString() + lastFiveDigitPrn).trim();
         return tranTableName;
 
     }

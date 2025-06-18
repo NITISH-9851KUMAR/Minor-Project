@@ -1,7 +1,5 @@
 package bank;
 
-import fun.DateNow;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,9 +13,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@WebServlet("/TransferBalance1Servlets")
+@WebServlet("/transfer-balance-f")
 
-public class TransferBalance1 extends HttpServlet{
+public class TransferBalanceF extends HttpServlet{
     final static String url = "jdbc:mysql://localhost:3306/NitiyaBank";
     final static String userName = "root";
     final static String password = "Nitish@04";
@@ -55,11 +53,11 @@ public class TransferBalance1 extends HttpServlet{
             if(senderAcNumber.equals(receiverAcNumber)){
                 out.println("<body style='background-color: #2d2d30;'>");
                 out.println("<div style='background-color: #ffffff; font-family:Arial, sans-serif; max-width:350px; margin: 50px auto; padding:20px; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.1);'>");
-                out.println("<h2 style='text-align: center;'>NITIYA BANK</h2>");
+                out.println("<h2 style='text-align: center;'>Nitiya Bank</h2>");
                 out.println("<div style='text-align: center;'>");
                 out.println("<p style='color:red;'>You Itself Receiver Details</p>");
                 out.println("<p style='color:black;'>Use Another Account Number <br> Entered Ac/No: "+receiverAcNumber+"</p>");
-                out.println("<form action='AccountMenu.jsp' method='post'>");
+                out.println("<form action='account-menu.jsp' method='post'>");
                 out.println("<input type='hidden' name='name' value='" + senderName + "'>");
                 out.println("<input type='hidden' name='accNumber' value='" + senderAcNumber + "'>");
                 out.println("<button type='submit' style='padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:25px; margin-top:15px; font-weight:bold;'>Go to Account Menu</button>");
@@ -78,11 +76,11 @@ public class TransferBalance1 extends HttpServlet{
             }else{
                 out.println("<body style='background-color: #2d2d30;'>");
                 out.println("<div style='background-color: #ffffff; font-family:Arial, sans-serif; max-width:350px; margin: 50px auto; padding:20px; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.1);'>");
-                out.println("<h2 style='text-align: center;'>NITIYA BANK</h2>");
+                out.println("<h2 style='text-align: center;'>Nitiya Bank</h2>");
                 out.println("<div style='text-align: center;'>");
                 out.println("<p style='color:red;'>Invalid Receiver Account Details</p>");
                 out.println("<p style='color:black;'>Receiver Account Number: "+receiverAcNumber+"</p>");
-                out.println("<form action='AccountMenu.jsp' method='post'>");
+                out.println("<form action='account-menu.jsp' method='post'>");
                 out.println("<input type='hidden' name='name' value='" + senderName + "'>");
                 out.println("<input type='hidden' name='accNumber' value='" + senderAcNumber + "'>");
                 out.println("<button type='submit' style='padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:25px; margin-top:15px; font-weight:bold;'>Go to Account Menu</button>");
@@ -98,11 +96,11 @@ public class TransferBalance1 extends HttpServlet{
             if(!ifsc.equals("PRSH0009851")){
                 out.println("<body style='background-color: #2d2d30;'>");
                 out.println("<div style='background-color: #ffffff; font-family:Arial, sans-serif; max-width:350px; margin: 50px auto; padding:20px; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.1);'>");
-                out.println("<h2 style='text-align: center;'>NITIYA BANK</h2>");
+                out.println("<h2 style='text-align: center;'>Nitiya Bank</h2>");
                 out.println("<div style='text-align: center;'>");
                 out.println("<p style='color:red;'>Invalid IFSC CODE</p>");
                 out.println("<p style='color:black;'>IFSC CODE: "+ifsc+"</p>");
-                out.println("<form action='AccountMenu.jsp' method='post'>");
+                out.println("<form action='account-menu.jsp' method='post'>");
                 out.println("<input type='hidden' name='name' value='" + senderName + "'>");
                 out.println("<input type='hidden' name='accNumber' value='" + senderAcNumber + "'>");
                 out.println("<button type='submit' style='padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:25px; margin-top:15px; font-weight:bold;'>Go to Account Menu</button>");
@@ -118,7 +116,7 @@ public class TransferBalance1 extends HttpServlet{
             e.printStackTrace();
         }
 
-        RequestDispatcher rd= request.getRequestDispatcher("TransferBalance2.jsp");
+        RequestDispatcher rd= request.getRequestDispatcher("transfer-balance-s.jsp");
         request.setAttribute("recName", receiverName);
         request.setAttribute("recAccNumber", receiverAcNumber);
         request.setAttribute("senAcNumber", senderAcNumber);

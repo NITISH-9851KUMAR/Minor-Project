@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Transfer Balance</title>
-    <link rel="stylesheet" href="transfer-bal.css">
+    <link rel="stylesheet" href="css/transfer-bal.css">
     <%
         String accNumber = request.getParameter("accNumber");
     %>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="form-section">
-        <form action="TransferBalance1Servlets" method="post">
+        <form action="transfer-balance-f" method="post">
             <input type="text" name="recAcNumber" placeholder="Ac Number" class="inp"  required>
             <input type="text" name="ifsc" placeholder="IFSC CODE / Upper Case" class="inp"  required>
 <%--            <input type="number" name="bal" placeholder="Balance" class="inp"  required><br>--%>

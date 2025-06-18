@@ -1,16 +1,46 @@
 package fun;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 public class AccountNumber {
+    final static String url = "jdbc:mysql://localhost:3306/NitiyaBank";
+    final static String userName = "root";
+    final static String password = "Nitish@04";
 
     public static String accNumber(String prn) {
-        String bankNumber = "447318210011";
-        StringBuilder str= new StringBuilder();
-        for(int i= 9; i<prn.length(); i++){
-            str.append(prn.charAt(i));
+
+        int count = 0;
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection(url, userName, password);
+
+            String query = "SELECT COUNT(name) FROM accountDetails";
+            PreparedStatement pstm = connection.prepareStatement(query);
+            ResultSet rSet = pstm.executeQuery();
+
+            if (rSet.next()) {
+                count = rSet.getInt(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        // bankNumber and prn last three digit number
-        String accNumber= bankNumber+str;
-        return accNumber;
+
+        // bank number is 357712364051+ number of customer +1
+
+        String bankNumber1 = "357712364051";
+        String bankNumber2 = "35771236405100";
+        String bankNumber3 = "3577123640510";
+        StringBuilder str = new StringBuilder();
+
+        if (count == 0) return "357712364051001";
+        else if (count > 0 && count < 10) return bankNumber2 + (count + 1);
+        else if (count > 10 && count < 100) return bankNumber3 + (count + 1);
+        else return bankNumber1 + (count + 1);
     }
+
 }

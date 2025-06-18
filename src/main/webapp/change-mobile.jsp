@@ -9,7 +9,7 @@
 <html>
 <head>
   <title>Change Mobile Number</title>
-  <link rel="stylesheet" href="deposit-bal.css">
+  <link rel="stylesheet" href="css/deposit-bal.css">
   <%
     String accNumber = request.getParameter("accNumber");
   %>
@@ -25,7 +25,7 @@
   </div>
 
   <div class="form-section">
-    <form action="ChangeMobServlets" method="post">
+    <form action="change-mob-number" method="post">
       <input type="number" name="mobNumber" placeholder="New Mobile Number" class="inp"  required><br>
       <input type="hidden" name="accNumber" value="<%=accNumber%>"><br>
       <button type="submit" class="sign-btn">Change Number</button>

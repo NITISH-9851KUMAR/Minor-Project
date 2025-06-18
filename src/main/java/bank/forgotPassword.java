@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@WebServlet("/PassRecoveryServlets")
+@WebServlet("/password-recover")
 public class forgotPassword extends HttpServlet {
 
     final static String url = "jdbc:mysql://localhost:3306/NitiyaBank";
@@ -58,7 +58,7 @@ public class forgotPassword extends HttpServlet {
                     out.println("<p><strong>Mobile Number:</strong> " + mobNumber + "</p>");
 
                     out.println("<div style='margin-top:20px;'>");
-                    out.println("<a href='User_Interface.html' style='padding:10px 20px; background-color:red; color:white; text-decoration:none; border-radius:25px; font-weight:bold;'>Log In to Your Account</a>");
+                    out.println("<a href='index.jsp' style='padding:10px 20px; background-color:red; color:white; text-decoration:none; border-radius:25px; font-weight:bold;'>Log In to Your Account</a>");
                     out.println("</div>");
 
                     out.println("</div>");
@@ -73,7 +73,7 @@ public class forgotPassword extends HttpServlet {
                     out.println("<p style='color:#555;'>Please check your credentials and try again.</p>");
 
                     out.println("<div style='margin-top:20px;'>");
-//                    out.println("<a href='forgotPassword.html' style='padding:10px 20px; background-color:green; color:white; text-decoration:none; border-radius:25px; font-weight:bold;'>Recover Password</a>");
+//                    out.println("<a href='forgot-password.jsp' style='padding:10px 20px; background-color:green; color:white; text-decoration:none; border-radius:25px; font-weight:bold;'>Recover Password</a>");
                     out.println("</div>");
 
                     out.println("</div>");
@@ -88,7 +88,6 @@ public class forgotPassword extends HttpServlet {
                 out.println("<p style='color:#555;'>Please check your credentials and try again.</p>");
 
                 out.println("<div style='margin-top:20px;'>");
-//                out.println("<a href='User_Interface.html' style='padding:5px 15px; background-color:red; color:white; text-decoration:none; border-radius:25px; display: inline-block;'>Login Account</a>");
                 out.println("</div>");
 
                 out.println("</div>");

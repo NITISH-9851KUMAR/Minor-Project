@@ -12,7 +12,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@WebServlet("/CheckBalanceServlets")
+@WebServlet("/check-balance")
 public class CheckBalance extends HttpServlet  {
     final static String url = "jdbc:mysql://localhost:3306/NitiyaBank";
     final static String userName = "root";
@@ -42,7 +42,7 @@ public class CheckBalance extends HttpServlet  {
 
                 out.println("<body style='background-color: #2d2d30;'>");
                 out.println("<div style='background-color: #ffffff; font-family:Arial, sans-serif; max-width:350px; margin: 50px auto; padding:20px; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.1);'>");
-                out.println("<h2 style='text-align: center;'>NITIYA BANK</h2>");
+                out.println("<h2 style='text-align: center;'>Nitiya Bank</h2>");
                 out.println("<h4 style='color:green; text-align:center;'>Account Balance</h4>");
 
                 out.println("<div style='text-align: center;'>");

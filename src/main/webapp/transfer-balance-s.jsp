@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Transfer Balance</title>
-    <link rel="stylesheet" href="transfer-bal.css">
+    <link rel="stylesheet" href="css/transfer-bal.css">
     <%
         String recName = request.getAttribute("recName").toString();
         String recAcNumber = request.getAttribute("recAccNumber").toString();
@@ -29,7 +29,7 @@
     </div>
 
     <div class="form-section">
-     <form action="TransferBalance2Servlets" method="post">
+     <form action="transfer-balance-s" method="post">
            <input type="number" name="bal" placeholder="Balance" class="inp"  required>
            <input type="hidden" name="senAcNumber" value="<%=sendAcNumber%>"><br>
            <input type="hidden" name="recAcNumber" value="<%=recAcNumber%>"><br>

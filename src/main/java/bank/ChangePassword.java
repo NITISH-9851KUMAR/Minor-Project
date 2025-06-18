@@ -12,7 +12,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@WebServlet("/ChangePasswordServlets")
+@WebServlet("/change-password")
 public class ChangePassword extends HttpServlet{
 
     final static String url = "jdbc:mysql://localhost:3306/NitiyaBank";
@@ -49,7 +49,7 @@ final static String password = "Nitish@04";
 
             out.println("<body style='background-color: #2d2d30;'>");
             out.println("<div style='background-color: #ffffff; font-family:Arial, sans-serif; max-width:350px; margin: 50px auto; padding:20px; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.1);'>");
-            out.println("<h2 style='text-align: center;'>NITIYA BANK</h2>");
+            out.println("<h2 style='text-align: center;'>Nitiya Bank</h2>");
             out.println("<div style='text-align: center;'>");
 
             // checking if input mobile number is already exist in our bank account
@@ -122,9 +122,9 @@ final static String password = "Nitish@04";
                 out.println("<p><strong>New Password:</strong> " + pass + "</p>");
             }
 
-            out.println("<form action='User_Interface.html' method='post'>");
+            out.println("<form action='index.jsp' method='post'>");
 
-            out.println("<button type='submit' style='padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:25px; margin-top:15px; font-weight:bold;'>Sign in</button>");
+            out.println("<button type='submit' style='padding:5px 30px; background-color:#4CAF50; color:white; border:none; border-radius:25px; margin-top:15px; font-weight:bold;'>Sign in</button>");
             out.println("</form>");
 
             out.println("</div>");
@@ -136,7 +136,6 @@ final static String password = "Nitish@04";
         }catch(Exception e){
             e.printStackTrace();
         }
-
 
     }
 }

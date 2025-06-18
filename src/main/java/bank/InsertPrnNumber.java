@@ -1,7 +1,5 @@
 package bank;
 
-import fun.DateNow;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 
-@WebServlet("/InsertPrnServlets")
+@WebServlet("/insert-prn")
 
 public class InsertPrnNumber extends HttpServlet{
 
@@ -42,7 +40,7 @@ public class InsertPrnNumber extends HttpServlet{
                 out.println("<p style='text-align: center;'>PRN Number: "+prnNumber+"</p>");
                 out.println("<div style='text-align: center;'>");
                 // Go to Account Menu Button with hidden inputs
-                out.println("<a href='InsertPrnNumber.html'><button type='submit' style='padding:5px 20px; background-color:#15dd25; color:white; border:none; border-radius:25px; margin-top:25px; font-weight:bold;'>Insert Prn</button></a>");
+                out.println("<a href='InsertPrnNumber.jsp'><button type='submit' style='padding:5px 20px; background-color:#15dd25; color:white; border:none; border-radius:25px; margin-top:25px; font-weight:bold;'>Insert Prn</button></a>");
                 out.println("</form>");
                 out.println("</div>");
                 out.println("</div>");
@@ -75,7 +73,7 @@ public class InsertPrnNumber extends HttpServlet{
                 out.println("<div style='text-align: center;'>");
                 out.println("<p style='text-align: center;'>PRN Number: "+prnNumber+"</p>");
                 // Go to Account Menu Button with hidden inputs
-                out.println("<a href='InsertPrnNumber.html'><button type='submit' style='padding:5px 20px; background-color:#15dd25; color:white; border:none; border-radius:25px; margin-top:25px; font-weight:bold;'>Insert Prn</button></a>");
+                out.println("<a href='insert-prn.jsp'><button type='submit' style='padding:5px 20px; background-color:#15dd25; color:white; border:none; border-radius:25px; margin-top:25px; font-weight:bold;'>Insert Prn</button></a>");
                 out.println("</form>");
                 out.println("</div>");
                 out.println("</div>");

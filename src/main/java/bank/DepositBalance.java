@@ -15,7 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 
-@WebServlet("/DepositBalanceServlets")
+@WebServlet("/deposit-balance")
 public class DepositBalance extends HttpServlet {
 
     final static String url = "jdbc:mysql://localhost:3306/NitiyaBank";
@@ -88,7 +88,7 @@ public class DepositBalance extends HttpServlet {
                 out.println("<p><strong>Deposit Balance:</strong> " + depositBal + "</p>");
 
                 // Go to Account Menu Button with hidden inputs
-                out.println("<form action= 'AccountMenu.jsp' method='post'>");
+                out.println("<form action= 'account-menu.jsp' method='post'>");
                 out.println("<input type= 'hidden' name='name' value='" + name + "'>");
                 out.println("<input type='hidden' name='accNumber' value='" + acNumber + "'>");
                 out.println("<button type='submit' style='padding:10px 20px; background-color:#4CAF50; color:white; border:none; border-radius:25px; margin-top:15px; font-weight:bold;'>Go to Account Menu</button>");

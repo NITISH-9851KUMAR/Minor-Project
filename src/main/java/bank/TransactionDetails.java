@@ -13,7 +13,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@WebServlet("/TransactionDetailsServlets")
+@WebServlet("/transaction-details")
 public class TransactionDetails extends HttpServlet {
 
     final static String url = "jdbc:mysql://localhost:3306/NitiyaBank";
@@ -71,7 +71,7 @@ public class TransactionDetails extends HttpServlet {
             out.println("<body style='background-color: #2d2d30;'>");
             out.println("<div style='background-color: #ffffff; font-family:Arial, sans-serif; margin: 50px auto; max-width: 700px; padding: 20px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0,0,0,0.1);'>");
 
-            out.println("<h2 style='text-align: center;'>NITIYA BANK</h2>");
+            out.println("<h2 style='text-align: center;'>Nitiya Bank</h2>");
             out.println("<h4 style='color: green; text-align: center;'>Transaction History</h4>");
 
             out.println("<table style='width:100%; border-collapse: collapse; text-align: center;'>");

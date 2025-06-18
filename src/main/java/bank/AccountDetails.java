@@ -12,7 +12,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@WebServlet("/AccountDetailsServlets")
+@WebServlet("/account-details")
 public class AccountDetails extends HttpServlet {
 
     final static String url = "jdbc:mysql://localhost:3306/NitiyaBank";
@@ -20,32 +20,32 @@ public class AccountDetails extends HttpServlet {
     final static String password = "Nitish@04";
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
-        throws IOException, ServletException{
+            throws IOException, ServletException {
 
         response.setContentType("text/html");
-        PrintWriter out= response.getWriter();
+        PrintWriter out = response.getWriter();
 
-        String acNumber= request.getParameter("accNumber");
+        String acNumber = request.getParameter("accNumber");
 
-        try{
+        try {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            Connection connection= DriverManager.getConnection(url, userName, password);
+            Connection connection = DriverManager.getConnection(url, userName, password);
 
-            String query= "SELECT * FROM accountDetails WHERE  acc_number= ?";
-            PreparedStatement pstm= connection.prepareStatement(query);
+            String query = "SELECT * FROM accountDetails WHERE  acc_number= ?";
+            PreparedStatement pstm = connection.prepareStatement(query);
             pstm.setString(1, acNumber);
-            ResultSet rSet= pstm.executeQuery();
+            ResultSet rSet = pstm.executeQuery();
 
-            if(rSet.next()){
-                String name= rSet.getString("name");
-                String mobNumber= rSet.getString("mob_number");
-                String prn= rSet.getString("prn_number");
-                String pass= rSet.getString("pass");
-                String accNum= rSet.getString("acc_number");
-                String bal= rSet.getString("acc_balance");
-                String opDate= rSet.getString("date_time");
+            if (rSet.next()) {
+                String name = rSet.getString("name");
+                String mobNumber = rSet.getString("mob_number");
+                String prn = rSet.getString("prn_number");
+                String pass = rSet.getString("pass");
+                String accNum = rSet.getString("acc_number");
+                String bal = rSet.getString("acc_balance");
+                String opDate = rSet.getString("date_time");
 
                 out.println("<body style='background-color: #2d2d30;'>");
                 out.println("<div style='background-color: #ffffff; font-family:Arial, sans-serif; max-width:450px; margin: 20px auto; padding:20px; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.1);'>");
@@ -60,7 +60,7 @@ public class AccountDetails extends HttpServlet {
                 out.println("<p><strong>Account Password: </strong> " + pass + "</p>");
                 out.println("<p><strong>Account Number: </strong> " + accNum + "</p>");
                 out.println("<p><strong>Account Balance: </strong> " + bal + "</p>");
-                out.println("<p><strong>Bank Name: </strong> NITIYA BANK</p>");
+                out.println("<p><strong>Bank Name: </strong> Nitiya Bank</p>");
                 out.println("<p><strong>IFSC Code: </strong> PRSH0009851</p>");
                 out.println("<p><strong>Account Open Date: </strong> " + opDate + "</p>");
 
@@ -68,10 +68,9 @@ public class AccountDetails extends HttpServlet {
 
                 out.println("</div>");
                 out.println("</body>");
-
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

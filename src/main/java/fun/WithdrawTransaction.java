@@ -10,7 +10,7 @@ public class WithdrawTransaction {
     final static String userName = "root";
     final static String password = "Nitish@04";
 
-    public WithdrawTransaction(String prn, String name, double debitBal, double totalBal, String currentDate, String details){
+    public WithdrawTransaction(String prn, String name, double debitBal, double totalBal, String currentDate, String details) {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -35,19 +35,19 @@ public class WithdrawTransaction {
             //Table Name =name and last five digit of prn number
             String tableName = firstName.toString() + lastFiveDigitPrn;//Final Table name Create Update passbook
 
-            String query= "INSERT INTO " + tableName +" (date_time, details, debit, balance) VALUES( ?, ?, ?, ?)";
-            PreparedStatement pstmt= connection.prepareStatement(query);
+            String query = "INSERT INTO " + tableName + " (date_time, details, debit, balance) VALUES( ?, ?, ?, ?)";
+            PreparedStatement pstmt = connection.prepareStatement(query);
             pstmt.setString(1, currentDate);
             pstmt.setString(2, details);
             pstmt.setDouble(3, debitBal);
             pstmt.setDouble(4, totalBal);
 
-            int rowAffect= pstmt.executeUpdate();
+            pstmt.executeUpdate();
 
             pstmt.close();
             connection.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

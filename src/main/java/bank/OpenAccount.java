@@ -12,10 +12,11 @@ import java.sql.*;
 import static fun.AccountNumber.accNumber;
 import static fun.DateNow.dateFun;
 
-@WebServlet(urlPatterns = "/OpenAccountServlets")
+@WebServlet(urlPatterns = "/open-account")
 public class OpenAccount extends HttpServlet {
 
     final static String url = "jdbc:mysql://localhost:3306/NitiyaBank";
+//    jdbc:mysql://127.0.0.1:3306
     final static String userName = "root";
     final static String password = "Nitish@04";
     public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -42,7 +43,6 @@ public class OpenAccount extends HttpServlet {
         // also check whether balance is less than 500
 
         double checkBal= Double.parseDouble(bal);
-        System.out.println((int)checkBal); //200
         if(checkBal< 500){
             out.println("<body style='background-color: #2d2d30;'>");
             out.println("<div style='background-color: #ffffff; font-family:Arial, sans-serif; max-width:400px; margin:100px auto; padding:20px; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.1); text-align:center;'>");
@@ -56,8 +56,6 @@ public class OpenAccount extends HttpServlet {
                 out.println("<h4 style='color:red;'>Minimum Balance Should be ₹500</h4>");
                 out.println("<p><strong>Balance :</strong> " + bal + "</p>");
             }
-
-            out.println("<a href='openAccount.html' style='display:inline-block; padding:10px 20px; background-color:red; color:white; text-decoration:none; border-radius:25px; font-weight:bold; margin-top:15px;'>Register Again</a>");
             out.println("</div>");
             out.println("</body>");
             return;
@@ -71,9 +69,6 @@ public class OpenAccount extends HttpServlet {
             out.println("<h2 style='text-align:center;'>Nitiya Bank</h2>");
             out.println("<h4 style='color:red;'>Invalid Mobile Number</h4>");
             out.println("<p><strong>Mobile Number:</strong> " + mobNumber + "</p>");
-
-
-            out.println("<a href='openAccount.html' style='display:inline-block; padding:10px 20px; background-color:red; color:white; text-decoration:none; border-radius:25px; font-weight:bold; margin-top:15px;'>Register Again</a>");
 
             out.println("</div>");
             out.println("</body>");
@@ -101,9 +96,6 @@ public class OpenAccount extends HttpServlet {
                 out.println("<h4 style='color:red;'>Invalid PRN Number</h4>");
                 out.println("<p><strong>Entered PRN:</strong> " + prn + "</p>");
 
-
-                out.println("<a href='openAccount.html' style='display:inline-block; padding:10px 20px; background-color:red; color:white; text-decoration:none; border-radius:25px; font-weight:bold; margin-top:15px;'>Register Again</a>");
-
                 out.println("</div>");
                 out.println("</body>");
                 return;
@@ -123,12 +115,17 @@ public class OpenAccount extends HttpServlet {
 
                 out.println("<p>The PRN number <strong>" + prn + "</strong> is already registered with our bank.</p>");
                 out.println("<p>If you already have an account, please</p>");
-                out.println("<a href='User_Interface.html' style='display:inline-block; padding:10px 20px; background-color:red; color:white; text-decoration:none; border-radius:25px; font-weight:bold;'>Log In</a>");
+//                out.println("<a href='index.jsp' style='display:inline-block; padding:5px 30px; background-color:red; color:white; text-decoration:none; border-radius:25px; font-weight:bold;'>Log In</a>");
+
+                out.println("<a href='index.jsp' "
+                        + "style='display:inline-block; padding:5px 30px; background-color:red; color:white; text-decoration:none; "
+                        + "border-radius:25px; ' "
+                        + "onmouseover=\"this.style.backgroundColor='#4e4545'\" "
+                        + "onmouseout=\"this.style.backgroundColor='red'\">"
+                        + "Log in</a>");
 
                 out.println("<p style='margin-top:15px;'>If you believe this is an error, contact our support team.</p>");
                 out.println("<p>Contact Us: <strong>7250063756</strong></p>");
-
-                out.println("<a href='openAccount.html' style='display:inline-block; padding:10px 20px; background-color:#28a745; color:white; text-decoration:none; border-radius:25px; font-weight:bold; margin-top:10px;'>Try Again with Another PRN</a>");
 
                 out.println("</div>");
                 out.println("</body>");
@@ -147,7 +144,7 @@ public class OpenAccount extends HttpServlet {
                 out.println("<p><strong>Entered Password:</strong> " + pass + "</p>");
 
 
-                out.println("<a href='openAccount.html' style='display:inline-block; padding:10px 20px; background-color:#dc3545; color:white; text-decoration:none; border-radius:25px; font-weight:bold; margin-top:15px;'>Register Again</a>");
+                out.println("<a href='open-account.jsp' style='display:inline-block; padding:10px 20px; background-color:#dc3545; color:white; text-decoration:none; border-radius:25px; font-weight:bold; margin-top:15px;'>Register Again</a>");
 
                 out.println("</div>");
                 out.println("</body>");
@@ -198,8 +195,6 @@ public class OpenAccount extends HttpServlet {
                 out.println("<p>Your password must contain at least:</p>");
                 out.println("<p>• One digit<br>• One special symbol<br>• One uppercase letter</p>");
 
-                out.println("<a href='openAccount.html' style='display:inline-block; padding:10px 20px; background-color:#dc3545; color:white; text-decoration:none; border-radius:25px; font-weight:bold; margin-top:15px;'>Register Again</a>");
-
                 out.println("</div>");
                 out.println("</body>");
                 return;
@@ -238,7 +233,7 @@ public class OpenAccount extends HttpServlet {
             out.println("<p><strong>Account Open Date:</strong> " + currentDate + "</p>");
 
             out.println("<div style='margin-top:20px; margin-bottom: 20px;'>");
-            out.println("<a href='User_Interface.html' style='padding:10px 20px; background-color:red; color:white; text-decoration:none; border-radius:25px; font-weight:bold;'>Log In to Your Account</a>");
+            out.println("<a href='index.jsp' style='padding:10px 20px; background-color:red; color:white; text-decoration:none; border-radius:25px; font-weight:bold;'>Log In to Your Account</a>");
             out.println("</div>");
 
             out.println("</div>");

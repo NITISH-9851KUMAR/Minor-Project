@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@WebServlet("/LoginRequestServlets")
+@WebServlet("/login-request")
 public class loginRequest extends HttpServlet {
 
     final static String url = "jdbc:mysql://localhost:3306/NitiyaBank";
@@ -40,7 +40,7 @@ public class loginRequest extends HttpServlet {
                 String acName= rSet.getString("name");
                 request.setAttribute("accNumber", accNumber);
                 request.setAttribute("name", acName);
-                RequestDispatcher rd = request.getRequestDispatcher("AccountMenu.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("account-menu.jsp");
                 rd.forward(request, response);
             }
             else {
@@ -53,7 +53,6 @@ public class loginRequest extends HttpServlet {
                 out.println("<p style='text-align:center;'> <strong>Password: </strong> " + userPass + "</p>");
 
                 out.println("<div style='text-align: center; margin-bottom: 10px;'>");
-                out.println("<a href='User_Interface.html' style='padding:5px 15px; background-color:red; color:white; text-decoration:none; border-radius:25px;  display: inline-block;'>Login Account</a>");
                 out.println("</div>");
 
                 out.println("</div>");

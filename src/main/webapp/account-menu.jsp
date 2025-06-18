@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Account Menubar</title>
-    <link rel="stylesheet" href="account-menu.css">
+    <link rel="stylesheet" href="css/account-menu.css">
 </head>
 <body>
 
@@ -40,42 +40,41 @@
 
     <div class="form-section">
 
-        <form action="CheckBalanceServlets" method="post" style="display:inline;">
+        <form action="check-balance" method="post" style="display:inline;">
             <input type="hidden" name="accNumber" value="<%= accNumber %>">
             <button type="submit" class="btn">Check Balance</button>
         </form>
 
 
-        <form action="DepositBalance.jsp" method="post" style="display:inline;">
+        <form action="deposit-balance.jsp" method="post" style="display:inline;">
             <input type="hidden" name="accNumber" value="<%= accNumber %>">
             <button type="submit" class="btn">Deposit Balance</button>
         </form>
 
-        <form action="TransferBalance1.jsp" method="post" style="display:inline;">
+        <form action="transfer-balance-f.jsp" method="post" style="display:inline;">
             <input type="hidden" name="accNumber" value="<%= accNumber %>">
             <button type="submit" class="btn">Transfer Balance</button>
         </form>
 
-        <form action="TransactionDetailsServlets" method="post" style="display:inline;">
+        <form action="transaction-details" method="post" style="display:inline;">
             <input type="hidden" name="accNumber" value="<%= accNumber %>">
             <button type="submit" class="btn">Transaction Details</button>
         </form><br>
 
-        <form action="AccountDetailsServlets" method="post" style="display:inline;">
+        <form action="account-details" method="post" style="display:inline;">
             <input type="hidden" name="accNumber" value="<%= accNumber %>">
             <button type="submit" class="btn">Account Details</button>
         </form>
 
-        <form action="ChangeMobile.jsp" method="post" style="display:inline;">
+        <form action="change-mobile.jsp" method="post" style="display:inline;">
             <input type="hidden" name="accNumber" value="<%= accNumber %>">
             <button type="submit" class="btn">Change Mobile Number</button>
         </form><br>
 
-        <form action="ChangePassword.jsp" method="post" style="display:inline;">
+        <form action="change-password.jsp" method="post" style="display:inline;">
             <input type="hidden" name="accNumber" value="<%= accNumber %>">
             <button type="submit" class="btn">Change Password</button>
         </form>
-
 
     </div>
 </div>

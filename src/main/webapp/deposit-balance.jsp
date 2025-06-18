@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Deposit Balance</title>
-    <link rel="stylesheet" href="deposit-bal.css">
+    <link rel="stylesheet" href="css/deposit-bal.css">
     <%
         String accNumber = request.getParameter("accNumber");
     %>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="form-section">
-        <form action="DepositBalanceServlets" method="post">
+        <form action="deposit-balance" method="post">
             <input type="number" name="dep-bal" placeholder="Enter Balance" class="inp"  required><br>
             <input type="hidden" name="accNumber" placeholder="Password" value="<%=accNumber%>"><br>
             <button type="submit" class="sign-btn">Deposit Balance</button>
