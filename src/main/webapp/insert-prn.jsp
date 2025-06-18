@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Insert Prn Number</title>
-    <link rel="stylesheet" href="css/InsertPrnNumber.css">
+    <link rel="stylesheet" href="css/insert-prn.css">
 </head>
 <body>
 

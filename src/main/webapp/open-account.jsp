@@ -10,7 +10,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Create Account</title>
-  <link rel="stylesheet" href="css/open-Account.css">
+  <link rel="stylesheet" href="css/open-account.css">
 </head>
 <body>
 
