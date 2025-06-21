@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Transfer Balance</title>
-    <link rel="stylesheet" href="css/transfer-bal.css">
+    <link rel="stylesheet" href="css/transfer_bal.css">
     <%
         String accNumber = request.getParameter("accNumber");
     %>

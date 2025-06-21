@@ -10,7 +10,7 @@
 <head>
     <title>Change Password</title>
     <%
-        String accNumber = request.getParameter("accNumber");
+        String accNumber = request.getParameter("accNumber").trim();
     %>
 </head>
 <body>
@@ -21,12 +21,12 @@
     <div class="logo">
         <h2>Nitiya Bank</h2>
         <p>Change Password</p>
-        <link rel="stylesheet" href="css/pass-change.css">
+        <link rel="stylesheet" href="css/pass_change.css">
     </div>
 
     <div class="form-section">
         <form action="change-password" method="post">
-            <input type="text" name="newPassword" placeholder="New Password / At least 6 digit" class="inp"  required><br>
+            <input type="text" name="newPassword" placeholder="New Password / At least 6 digit" class="inp" required><br>
             <div class="password">
                 <p>Note? <small style="color: black;">Password at least contain one digit, special Symbol and Upper Case</small> </p>
             </div>

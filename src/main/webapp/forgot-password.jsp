@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Forgot Password</title>
-    <link rel="stylesheet" href="css/forgot-pass.css"></head>
+    <link rel="stylesheet" href="css/forgot_pass.css"></head>
 <body>
 
 <div class="container">

@@ -35,11 +35,11 @@ public class AccountNumber {
         String bankNumber1 = "357712364051";
         String bankNumber2 = "35771236405100";
         String bankNumber3 = "3577123640510";
-        StringBuilder str = new StringBuilder();
 
         if (count == 0) return "357712364051001";
+        else if(count==9) return bankNumber3 + (count + 1);
         else if (count > 0 && count < 10) return bankNumber2 + (count + 1);
-        else if (count > 10 && count < 100) return bankNumber3 + (count + 1);
+        else if (count >= 10 && count < 100) return bankNumber3 + (count + 1);
         else return bankNumber1 + (count + 1);
     }
 

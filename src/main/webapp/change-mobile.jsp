@@ -9,7 +9,7 @@
 <html>
 <head>
   <title>Change Mobile Number</title>
-  <link rel="stylesheet" href="css/deposit-bal.css">
+  <link rel="stylesheet" href="css/deposit_bal.css">
   <%
     String accNumber = request.getParameter("accNumber");
   %>

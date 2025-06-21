@@ -26,7 +26,7 @@ public class ChangeMobNumber extends HttpServlet{
         PrintWriter out = response.getWriter();
 
         String acNumber = request.getParameter("accNumber").trim();
-        String mobNumber = request.getParameter("mobNumber");
+        String mobNumber = request.getParameter("mobNumber").trim();
         String name= "";
         String reMobNumber= "";
 

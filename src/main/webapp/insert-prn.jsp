@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>Insert Prn Number</title>
-    <link rel="stylesheet" href="css/insert-prn.css">
+    <link rel="stylesheet" href="css/insert_prn.css">
 </head>
 <body>
 
@@ -23,6 +23,7 @@
     <div class="form-section">
         <form action="insert-prn" method="post">
             <input type="text" name="prnNumber" placeholder="PRN Number" class="inp" required><br>
+            <input type="password" name="pass" placeholder="Password" required>
             <button type="submit" class="sign-btn">Insert</button>
         </form>
     </div>

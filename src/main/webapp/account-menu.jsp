@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Account Menubar</title>
-    <link rel="stylesheet" href="css/account-menu.css">
+    <link rel="stylesheet" href="css/account_menu.css">
 </head>
 <body>
 
@@ -22,12 +22,12 @@
         <%-- Know accNumber and name --%>
         <%
             String accNumber = request.getAttribute("accNumber") != null
-                    ? request.getAttribute("accNumber").toString()
-                    : request.getParameter("accNumber");
+                    ? request.getAttribute("accNumber").toString().trim()
+                    : request.getParameter("accNumber").trim();
 
             String name = request.getAttribute("name") != null
-                    ? request.getAttribute("name").toString()
-                    : request.getParameter("name");
+                    ? request.getAttribute("name").toString().trim()
+                    : request.getParameter("name").trim();
 
             String logoView= request.getAttribute("name") != null
                     ? "Account login Successfully"

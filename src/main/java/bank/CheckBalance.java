@@ -24,7 +24,7 @@ public class CheckBalance extends HttpServlet  {
         response.setContentType("text/html");
         PrintWriter out= response.getWriter();
 
-        String acNumber= request.getParameter("accNumber");
+        String acNumber= request.getParameter("accNumber").trim();
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");

@@ -27,20 +27,41 @@ public class InsertPrnNumber extends HttpServlet{
         PrintWriter out = response.getWriter();
 
         String prnNumber = request.getParameter("prnNumber").trim();
+        String pass= request.getParameter("pass").trim();
+        String pass1= "NITIYA@9851P";
 
         try {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            if(prnNumber.length()!=12) {
+            Connection connection;
+            String query;
+            PreparedStatement pstm;
+            ResultSet rSet;
+
+
+            if(prnNumber.length()!=12) { // Checking prn is invalid
                 out.println("<body style='background-color: #2d2d30;'>");
                 out.println("<div style='background-color: #ffffff; font-family:Arial, sans-serif; max-width:350px; margin: 50px auto; padding:20px; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.1);'>");
                 out.println("<h2 style='text-align: center;'>Nitiya Bank</h2>");
                 out.println("<h4 style='color:red; text-align:center;'>Invalid PRN Number</h4>");
                 out.println("<p style='text-align: center;'>PRN Number: "+prnNumber+"</p>");
                 out.println("<div style='text-align: center;'>");
+                out.println("</form>");
+                out.println("</div>");
+                out.println("</div>");
+                out.println("</body>");
+                return;
+            }
+            if(!pass.equals(pass1)) { // Check For password
+                out.println("<body style='background-color: #2d2d30;'>");
+                out.println("<div style='background-color: #ffffff; font-family:Arial, sans-serif; max-width:350px; margin: 50px auto; padding:20px; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.1);'>");
+                out.println("<h2 style='text-align: center;'>Nitiya Bank</h2>");
+                out.println("<h4 style='color:red; text-align:center;'>Invalid PRN Number</h4>");
+                out.println("<p style='text-align: center;'>Invalid  Password: "+pass+"</p>");
+                out.println("<div style='text-align: center;'>");
                 // Go to Account Menu Button with hidden inputs
-                out.println("<a href='InsertPrnNumber.jsp'><button type='submit' style='padding:5px 20px; background-color:#15dd25; color:white; border:none; border-radius:25px; margin-top:25px; font-weight:bold;'>Insert Prn</button></a>");
+                out.println("<a href='insert-prn.jsp'><button type='submit' style='padding:5px 20px; background-color:#15dd25; color:white; border:none; border-radius:25px; margin-top:25px; font-weight:bold;'>Insert Prn</button></a>");
                 out.println("</form>");
                 out.println("</div>");
                 out.println("</div>");
@@ -48,10 +69,10 @@ public class InsertPrnNumber extends HttpServlet{
                 return;
             }
 
-            Connection connection = DriverManager.getConnection(url, userName, password);
-            String query = "SELECT COUNT(sr_no) FROM prn_details";
-            PreparedStatement pstm = connection.prepareStatement(query);
-            ResultSet rSet= pstm.executeQuery();
+            connection = DriverManager.getConnection(url, userName, password);
+            query = "SELECT COUNT(sr_no) FROM prn_details";
+            pstm = connection.prepareStatement(query);
+            rSet= pstm.executeQuery();
             int count= 0;
             if(rSet.next()){
                 count= rSet.getInt(1);
@@ -72,8 +93,7 @@ public class InsertPrnNumber extends HttpServlet{
                 out.println("<h4 style='color:green; text-align:center;'>PRN Successfully Inserted</h4>");
                 out.println("<div style='text-align: center;'>");
                 out.println("<p style='text-align: center;'>PRN Number: "+prnNumber+"</p>");
-                // Go to Account Menu Button with hidden inputs
-                out.println("<a href='insert-prn.jsp'><button type='submit' style='padding:5px 20px; background-color:#15dd25; color:white; border:none; border-radius:25px; margin-top:25px; font-weight:bold;'>Insert Prn</button></a>");
+                // Go to Account Menu Button with hidden inputs;
                 out.println("</form>");
                 out.println("</div>");
                 out.println("</div>");

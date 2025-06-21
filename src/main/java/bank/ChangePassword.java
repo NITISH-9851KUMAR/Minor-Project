@@ -25,7 +25,7 @@ final static String password = "Nitish@04";
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         String acNumber = request.getParameter("accNumber").trim();
-        String pass = request.getParameter("newPassword");
+        String pass = request.getParameter("newPassword").trim();
 
         String name= "";
         String regPass= "";
@@ -52,7 +52,7 @@ final static String password = "Nitish@04";
             out.println("<h2 style='text-align: center;'>Nitiya Bank</h2>");
             out.println("<div style='text-align: center;'>");
 
-            // checking if input mobile number is already exist in our bank account
+            // checking if pass is already exist in our bank account
             if (pass.equals(regPass)) {
                 out.println("<p style='color:red;'>Password Already Exist</p>");
                 out.println("<p style='color: #03a9f4;'>Use New Password</p>");

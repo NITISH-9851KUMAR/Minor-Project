@@ -22,8 +22,8 @@ public class loginRequest extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out= response.getWriter();
 
-        String accNumber= request.getParameter("accNumber");
-        String userPass= request.getParameter("pass");
+        String accNumber= request.getParameter("accNumber").trim();
+        String userPass= request.getParameter("pass").trim();
 
         try{
 

@@ -29,7 +29,7 @@ public class DepositBalance extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String acNumber = request.getParameter("accNumber").trim();
-        String val= request.getParameter("dep-bal");
+        String val= request.getParameter("dep-bal").trim();
         float depositBal= Float.parseFloat(val);
         String currentDate= DateNow.dateFun();
         String prn= "";

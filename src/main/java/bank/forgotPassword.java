@@ -22,9 +22,9 @@ public class forgotPassword extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String prn = request.getParameter("prn-num");
-        String mobNum = request.getParameter("mob-num");
-        String accNum = request.getParameter("acc-num");
+        String prn = request.getParameter("prn-num").trim();
+        String mobNum = request.getParameter("mob-num").trim();
+        String accNum = request.getParameter("acc-num").trim();
 
         try {
 
@@ -58,7 +58,7 @@ public class forgotPassword extends HttpServlet {
                     out.println("<p><strong>Mobile Number:</strong> " + mobNumber + "</p>");
 
                     out.println("<div style='margin-top:20px;'>");
-                    out.println("<a href='index.jsp' style='padding:10px 20px; background-color:red; color:white; text-decoration:none; border-radius:25px; font-weight:bold;'>Log In to Your Account</a>");
+                    out.println("<a href='index.jsp' style='padding:10px 20px; background-color:red; color:white; text-decoration:none; border-radius:25px; font-weight:bold;'>Log in</a>");
                     out.println("</div>");
 
                     out.println("</div>");
@@ -73,7 +73,6 @@ public class forgotPassword extends HttpServlet {
                     out.println("<p style='color:#555;'>Please check your credentials and try again.</p>");
 
                     out.println("<div style='margin-top:20px;'>");
-//                    out.println("<a href='forgot-password.jsp' style='padding:10px 20px; background-color:green; color:white; text-decoration:none; border-radius:25px; font-weight:bold;'>Recover Password</a>");
                     out.println("</div>");
 
                     out.println("</div>");
