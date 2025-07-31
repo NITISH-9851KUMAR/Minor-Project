@@ -11,7 +11,7 @@ A Minor Project developed as part of the B.Tech (CSE) curriculum.
 ![Open-Account](src/main/webapp/img/Open-Account.png)
 
 ## Password Recover
-![Password Recover](src/main/webapp/img/Password-Recover.png)
+![Password-Recover](src/main/webapp/img/Password-Recover.png)
 
 ## Transfer Balance
 ![Transfer-Balance](src/main/webapp/img/Transfer-Balance.png)
